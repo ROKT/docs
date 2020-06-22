@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Embedded Placement Integration · Rokt</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The Rokt SDK for Android can be used to display a Rokt placement embedded in your app’s content. These instructions assume that the Rokt SDK for Android has already been integrated into your application by following steps 1 to 5 [here.](/rokt-http-api/docs/static/rokt-sdk-mobile/android/static-overlay-placement-android)"/><meta name="docsearch:version" content="1.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Embedded Placement Integration · Rokt"/><meta property="og:type" content="website"/><meta property="og:url" content="https://rokt.github.io/rokt-http-api/"/><meta property="og:description" content="The Rokt SDK for Android can be used to display a Rokt placement embedded in your app’s content. These instructions assume that the Rokt SDK for Android has already been integrated into your application by following steps 1 to 5 [here.](/rokt-http-api/docs/static/rokt-sdk-mobile/android/static-overlay-placement-android)"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/rokt-http-api/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/rokt-http-api/fontawesome/brands.min.js"></script><script type="text/javascript" src="/rokt-http-api/fontawesome/fontawesome.min.js"></script><script type="text/javascript" src="/rokt-http-api/hack-header-icon.js"></script><script type="text/javascript" src="/rokt-http-api/hack-contact-us.js"></script><script src="/rokt-http-api/js/scrollSpy.js"></script><link rel="stylesheet" href="/rokt-http-api/css/main.css"/><script src="/rokt-http-api/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/rokt-http-api/"><img class="logo" src="/rokt-http-api/img/rokt-logo-white.svg" alt="Rokt"/></a><a href="/rokt-http-api/versions"><h3>1.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/rokt-http-api/introduction" target="_self">Introduction</a></li><li class=""><a href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-introduction" target="_self">SDK</a></li><li class=""><a href="/rokt-http-api/docs/static/rokt-http-api/api-getting-started" target="_self">API</a></li><li class=""><a href="/rokt-http-api/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Embedded Placement Integration</h1></header><article><div><span><p>The Rokt SDK for Android can be used to display a Rokt placement embedded in your app’s content. These instructions assume that the Rokt SDK for Android has already been integrated into your application by following steps 1 to 5 <a href="/rokt-http-api/docs/static/rokt-sdk-mobile/android/static-overlay-placement-android">here.</a></p>
+<h3><a class="anchor" aria-hidden="true" id="step-6-include-the-rokt-embedded-widget-in-the-layout-xml-file"></a><a href="#step-6-include-the-rokt-embedded-widget-in-the-layout-xml-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 6: Include the Rokt embedded widget in the layout XML file</h3>
+<pre><code class="hljs"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span>
+    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">"http://schemas.android.com/tools"</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">".MainActivity"</span>&gt;</span>
+ 
+    <span class="hljs-tag">&lt;<span class="hljs-name">com.rokt.roktsdk.Widget</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/roktWidget"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">"parent"</span> /&gt;</span>
+ 
+<span class="hljs-tag">&lt;/<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>The Rokt embedded placement can also be created in code and included in the layout dynamically</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="step-7-execute-the-rokt-android-sdk"></a><a href="#step-7-execute-the-rokt-android-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 7: Execute the Rokt Android SDK</h3>
+<p>Execute the SDK in your desired Activity/Fragment, passing any appropriate consumer attributes and the placement mapping. The example code uses onCreate to launch the placement.</p>
+<blockquote>
+<p>The Rokt placement displays after a short delay, configurable via the Rokt platform.</p>
+<p>The height of the Rokt embedded placement will be updated accordingly. It is advised to set the height of the placement to <code>wrap_content</code> so that the placement can set it's height dynamically.</p>
+<p>The SDK provides optional callback events for when the view loads and unloads.</p>
+<p>Your app dictates which consumer attributes are passed through to Rokt. More information on the data fields that are able to be passed through the SDK can be found under the “Attributes” section. You can add additional code lines into the below sections containing consumer attributes in order to build up the data package that will be sent through to Rokt.</p>
+</blockquote>
+<p><strong>Kotlin</strong></p>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> com.rokt.roktsdk.Widget
+<span class="hljs-keyword">import</span> com.rokt.roktsdk.Rokt
+  
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfirmationActivity</span> : <span class="hljs-type">Activity</span></span>() {  
+ 
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">val</span> roktCalllback = <span class="hljs-keyword">object</span> : Rokt.RoktCallback {
+        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onLoad</span><span class="hljs-params">()</span></span> {
+        }
+ 
+        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onShouldShowLoadingIndicator</span><span class="hljs-params">()</span></span> {
+        }
+ 
+        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onShouldHideLoadingIndicator</span><span class="hljs-params">()</span></span> {
+        }
+ 
+        <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onUnload</span><span class="hljs-params">(reason: <span class="hljs-type">Rokt</span>.<span class="hljs-type">UnloadReasons</span>)</span></span> {
+        }
+    }
+ 
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> {      
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)      
+        .....   
+  
+        <span class="hljs-comment">// Include any appropriate consumer attributes</span>
+        <span class="hljs-keyword">val</span> attributes = hashMapOf(
+            Pair(<span class="hljs-string">"email"</span>, <span class="hljs-string">"j.smith@example.com"</span>),
+            Pair(<span class="hljs-string">"firstname"</span>, <span class="hljs-string">"Jenny"</span>),
+            Pair(<span class="hljs-string">"lastname"</span>, <span class="hljs-string">"Smith"</span>),
+            Pair(<span class="hljs-string">"mobile"</span>, <span class="hljs-string">"(323) 867-5309"</span>),
+            Pair(<span class="hljs-string">"postcode"</span>, <span class="hljs-string">"90210"</span>),
+            Pair(<span class="hljs-string">"country"</span>, <span class="hljs-string">"US"</span>)
+        )
+ 
+        <span class="hljs-comment">// Widget placeholder mapping the placeholder view with placement location configuration</span>
+        <span class="hljs-keyword">val</span> widget = findViewById&lt;Widget&gt;(R.id.roktWidget)
+        <span class="hljs-keyword">val</span> placeHolders = hashMapOf(
+            Pair(<span class="hljs-string">"RoktEmbedded1"</span>, WeakReference(widget))
+        )
+ 
+        Rokt.execute(
+            viewName = <span class="hljs-string">"RoktExperience"</span>,
+            attributes = attributes,
+            callback = roktCalllback,
+            placeholders = placeHolders
+        )
+        ....
+    }
+}
+</code></pre>
+<p><strong>Java</strong></p>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> com.rokt.roktsdk.Widget;
+<span class="hljs-keyword">import</span> com.rokt.roktsdk.Rokt;
+  
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfirmationActivity</span> :</span> Activity() {  
+ 
+    <span class="hljs-keyword">private</span> Rokt.RoktCallback roktCallback = <span class="hljs-keyword">new</span> Rokt.RoktCallback() {
+        @Override
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> onLoad() {
+        }
+ 
+        @Override
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> onShouldShowLoadingIndicator() {
+        }
+ 
+        @Override
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> onShouldHideLoadingIndicator() {
+        }
+ 
+        @Override
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> onUnload(@NotNull Rokt.UnloadReasons unloadReasons) {
+        }
+    };
+ 
+    <span class="hljs-function"><span class="hljs-keyword">override</span> fun <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: Bundle?)</span> </span>{      
+        super.onCreate(savedInstanceState)      
+        ....    
+  
+        Map&lt;<span class="hljs-keyword">String</span>, <span class="hljs-keyword">String</span>&gt; attributes = <span class="hljs-keyword">new</span> HashMap&lt;<span class="hljs-keyword">String</span>, <span class="hljs-keyword">String</span>&gt;();
+ 
+        attributes.<span class="hljs-built_in">put</span>(<span class="hljs-string">"email"</span>, <span class="hljs-string">"j.smith@example.com"</span>);
+        attributes.<span class="hljs-built_in">put</span>(<span class="hljs-string">"firstname"</span>, <span class="hljs-string">"Jenny"</span>);
+        attributes.<span class="hljs-built_in">put</span>(<span class="hljs-string">"lastname"</span>, <span class="hljs-string">"Smith"</span>);
+        attributes.<span class="hljs-built_in">put</span>(<span class="hljs-string">"mobile"</span>, <span class="hljs-string">"(323) 867-5309"</span>);
+        attributes.<span class="hljs-built_in">put</span>(<span class="hljs-string">"postcode"</span>, <span class="hljs-string">"90210"</span>);
+        attributes.<span class="hljs-built_in">put</span>(<span class="hljs-string">"country"</span>, <span class="hljs-string">"US"</span>);
+ 
+        <span class="hljs-comment">// Widget placeholder mapping the placeholder view with placement location configuration</span>
+        Widget widget = findViewById(R.id.roktWidget);
+        Map&lt;<span class="hljs-keyword">String</span>, WeakReference&lt;Widget&gt;&gt; placeHolders = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        placeHolders.<span class="hljs-built_in">put</span>(<span class="hljs-string">"RoktEmbedded1"</span>, <span class="hljs-keyword">new</span> WeakReference&lt;&gt;(widget));
+ 
+        Rokt.INSTANCE.execute(<span class="hljs-string">"RoktExperience"</span>,
+                attributes,
+                roktCallback,
+                placeHolders);
+        ....
+    }
+}
+</code></pre>
+<blockquote>
+<p>If you wish to update the view name(RoktExperience) or placeholder name(RoktEmbedded1) with a different value, please contact your Rokt account manager to ensure Rokt placements are configured consistently.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="step-8-build--run"></a><a href="#step-8-build--run" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 8: Build &amp; Run</h3>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>DOCS</h5><a href="/rokt-http-api/docs/static/static-introduction">Getting Started</a><a href="/rokt-http-api/docs/rokt-js-sdk/rokt-js-sdk-introduction">Rokt Javascript SDK</a></div><div><h5>ROKT</h5><a href="https://rokt.com/privacy-policy/" target="_blank" rel="noreferrer noopener">Privacy Policy</a><a href="https://rokt.com/contact-us/" target="_blank" rel="noreferrer noopener">Contact Us</a><a href="https://rokt.com/engineering-blog/" target="_blank" rel="noreferrer noopener">Blog</a></div><div><a href="https://rokt.com" class="nav-home"><img src="/rokt-http-api/img/rokt-logo-white.svg" alt="Rokt"/></a><div class="social"><a href="https://www.facebook.com/ROKT" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-square"></i></a><a href="https://tweeter.com/rokt" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter-square"></i></a><a href="https://www.linkedin.com/company/rokt" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a></div></div></section><section class="copyright">Copyright © Rokt 2020 - All Rights Reserved</section></footer></div></body></html>

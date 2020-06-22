@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Core Attributes · Rokt</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Passing data in your Rokt integration is important as the rich, granular data allows for greater campaign optimization, enhanced targeting, personalization capabilities, and spend efficiencies. This also allows conversions to be attributed to the appropriate Rokt campaign with a high degree of accuracy."/><meta name="docsearch:version" content="1.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Core Attributes · Rokt"/><meta property="og:type" content="website"/><meta property="og:url" content="https://rokt.github.io/rokt-http-api/"/><meta property="og:description" content="Passing data in your Rokt integration is important as the rich, granular data allows for greater campaign optimization, enhanced targeting, personalization capabilities, and spend efficiencies. This also allows conversions to be attributed to the appropriate Rokt campaign with a high degree of accuracy."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/rokt-http-api/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/rokt-http-api/fontawesome/brands.min.js"></script><script type="text/javascript" src="/rokt-http-api/fontawesome/fontawesome.min.js"></script><script type="text/javascript" src="/rokt-http-api/hack-header-icon.js"></script><script type="text/javascript" src="/rokt-http-api/hack-contact-us.js"></script><script src="/rokt-http-api/js/scrollSpy.js"></script><link rel="stylesheet" href="/rokt-http-api/css/main.css"/><script src="/rokt-http-api/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/rokt-http-api/"><img class="logo" src="/rokt-http-api/img/rokt-logo-white.svg" alt="Rokt"/></a><a href="/rokt-http-api/versions"><h3>1.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/rokt-http-api/introduction" target="_self">Introduction</a></li><li class=""><a href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-introduction" target="_self">SDK</a></li><li class=""><a href="/rokt-http-api/docs/static/rokt-http-api/api-getting-started" target="_self">API</a></li><li class=""><a href="/rokt-http-api/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Core Attributes</h1></header><article><div><span><p>Passing data in your Rokt integration is important as the rich, granular data allows for greater campaign optimization, enhanced targeting, personalization capabilities, and spend efficiencies. This also allows conversions to be attributed to the appropriate Rokt campaign with a high degree of accuracy.
+You can find the full list of pre-defined Rokt attributes in the sections below, and you can also pass any custom attributes to complement the standard integration.</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Attribute</th><th>Format</th><th>Payload Example</th></tr>
+</thead>
+<tbody>
+<tr><td>Email</td><td>email</td><td>email</td><td><a href="mailto:john.smith@rokt.com">john.smith@rokt.com</a></td></tr>
+<tr><td>Email (MD5)</td><td>emailmd5</td><td>MD5 hash string</td><td>238afb9e862add7d56bbc4181b80fa32</td></tr>
+<tr><td>Email (SHA256)</td><td>emailsha256</td><td>SHA256 hash string</td><td></td></tr>
+<tr><td>Amount</td><td>amount</td><td>amount</td><td>300.5</td></tr>
+<tr><td>Currency</td><td>currency</td><td>3-letter ISO currency code</td><td>USD</td></tr>
+<tr><td>Quantity</td><td>quantity</td><td>number</td><td>2</td></tr>
+<tr><td>Payment Type</td><td>paymenttype</td><td>string</td><td>Credit Card, Paypal</td></tr>
+<tr><td>Credit Card BIN</td><td>ccbin</td><td>6 digits</td><td>372888</td></tr>
+<tr><td>Margin</td><td>margin</td><td>amount</td><td>10.5</td></tr>
+<tr><td>Confirmation Reference</td><td>confirmationref</td><td>string</td><td>XYZ123</td></tr>
+<tr><td>First Name</td><td>firstname</td><td>name</td><td>John</td></tr>
+<tr><td>Last Name</td><td>lastname</td><td>name</td><td>Smith</td></tr>
+<tr><td>Mobile</td><td>mobile</td><td>mobile format without country code</td><td>7327572923</td></tr>
+<tr><td>Title</td><td>title</td><td>Mr/Mrs/Ms/Miss</td><td>Ms</td></tr>
+<tr><td>Gender</td><td>gender</td><td>M or F</td><td>F</td></tr>
+<tr><td>Date of Birth</td><td>dob</td><td>yyyymmdd</td><td>19831215</td></tr>
+<tr><td>Age</td><td>age</td><td>integer</td><td>33</td></tr>
+<tr><td>Language</td><td>language</td><td>2-letter ISO language code</td><td>en, nl, de, fr</td></tr>
+<tr><td>Experience</td><td>experience</td><td>string</td><td></td></tr>
+<tr><td>Unit Number</td><td>unitno</td><td>string</td><td>101</td></tr>
+<tr><td>Address Line 1</td><td>address1</td><td>string</td><td>123 Fake Street</td></tr>
+<tr><td>Address Line 2</td><td>address2</td><td>string</td><td>Building A</td></tr>
+<tr><td>ZIP/Postcode</td><td>zipcode</td><td>zipcode</td><td>90210</td></tr>
+<tr><td>City</td><td>city</td><td>string</td><td>New York</td></tr>
+<tr><td>State</td><td>state</td><td>state</td><td>NY</td></tr>
+<tr><td>Country</td><td>country</td><td>2-letter ISO country code</td><td>us, au, nz, ca, gb, sg</td></tr>
+<tr><td>Conversion Type</td><td>conversiontype</td><td>string</td><td></td></tr>
+<tr><td>Rokt Tracking ID</td><td>rokttrackingid</td><td>string</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>DOCS</h5><a href="/rokt-http-api/docs/static/static-introduction">Getting Started</a><a href="/rokt-http-api/docs/rokt-js-sdk/rokt-js-sdk-introduction">Rokt Javascript SDK</a></div><div><h5>ROKT</h5><a href="https://rokt.com/privacy-policy/" target="_blank" rel="noreferrer noopener">Privacy Policy</a><a href="https://rokt.com/contact-us/" target="_blank" rel="noreferrer noopener">Contact Us</a><a href="https://rokt.com/engineering-blog/" target="_blank" rel="noreferrer noopener">Blog</a></div><div><a href="https://rokt.com" class="nav-home"><img src="/rokt-http-api/img/rokt-logo-white.svg" alt="Rokt"/></a><div class="social"><a href="https://www.facebook.com/ROKT" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-square"></i></a><a href="https://tweeter.com/rokt" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter-square"></i></a><a href="https://www.linkedin.com/company/rokt" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a></div></div></section><section class="copyright">Copyright © Rokt 2020 - All Rights Reserved</section></footer></div></body></html>
