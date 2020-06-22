@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Embedded Placement Integration · Rokt</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The Rokt SDK for iOS can be used to display a Rokt placement embedded in your app’s content. These instructions assume that the Rokt SDK for iOS has already been integrated into your application by following steps 1 to 4 [here](/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-integrating-and-initialising-ios)."/><meta name="docsearch:version" content="0.3.51"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Embedded Placement Integration · Rokt"/><meta property="og:type" content="website"/><meta property="og:url" content="https://rokt.github.io/rokt-sdk-js/"/><meta property="og:description" content="The Rokt SDK for iOS can be used to display a Rokt placement embedded in your app’s content. These instructions assume that the Rokt SDK for iOS has already been integrated into your application by following steps 1 to 4 [here](/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-integrating-and-initialising-ios)."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/rokt-sdk-js/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/rokt-sdk-js/fontawesome/brands.min.js"></script><script type="text/javascript" src="/rokt-sdk-js/fontawesome/fontawesome.min.js"></script><script type="text/javascript" src="/rokt-sdk-js/hack-header-icon.js"></script><script type="text/javascript" src="/rokt-sdk-js/hack-contact-us.js"></script><script src="/rokt-sdk-js/js/scrollSpy.js"></script><link rel="stylesheet" href="/rokt-sdk-js/css/main.css"/><script src="/rokt-sdk-js/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/rokt-sdk-js/"><img class="logo" src="/rokt-sdk-js/img/rokt-logo-white.svg" alt="Rokt"/></a><a href="/rokt-sdk-js/versions"><h3>0.3.51</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/rokt-sdk-js/introduction" target="_self">Introduction</a></li><li class="siteNavGroupActive"><a href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-introduction" target="_self">SDK</a></li><li class=""><a href="/rokt-http-api/docs/static/rokt-http-api/api-getting-started.html" target="_self">API</a></li><li class=""><a href="/rokt-sdk-js/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Integrating the SDK</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Web SDK</h3><ul class=""><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-rokt-object">Rokt Object</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Examples</h4><ul><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/examples/static-confirmation">Confirmation Page Integration</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/examples/static-conversion">Brand Conversion Integration</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/examples/static-in-transaction">In transaction/cart integration</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/examples/static-sandbox">Sandbox Integration</a></li></ul></div><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-attributes">Attributes</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-fulfillment-attributes">Fulfillment Attributes</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-security">Security</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">API</h4><ul><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/">Introduction</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/interfaces/rokt">Rokt</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/interfaces/attributes">Attributes</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/interfaces/cart">Cart</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/interfaces/cartitem">CartItem</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/interfaces/placementcloseevent">PlacementCloseEvent</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/interfaces/roktconfiguration">RoktConfiguration</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/interfaces/widget">Widget</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/enums/failurereason">FailureReason</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/rokt-js-sdk/globals">Types</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">iOS SDK</h3><ul class=""><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-introduction-ios">Introduction</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Integrating the SDK</h4><ul><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-integrating-and-initialising-ios">Integrating and Initialising the SDK</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-overlay-placement-ios">Overlay Placement Integration</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-embedded-placement-ios">Embedded Placement Integration</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-brand-conversion-ios">Brand Conversion Integration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Attributes</h4><ul><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-core-attributes-ios">Core Attributes</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-vertical-attributes-ios">Vertical Attributes</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Android SDK</h3><ul class=""><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/android/introduction-android">Introduction</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Integrating the SDK</h4><ul><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/android/static-integrating-and-initialising-android">Integrating and Initialising the SDK</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/android/static-overlay-placement-android">Overlay Placement Integration</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/android/static-embedded-placement-android">Embedded Placement Integration</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/android/static-brand-conversion-android">Brand Conversion Integration</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Attributes</h4><ul><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/android/static-core-attributes-android">Core Attributes</a></li><li class="navListItem"><a class="navItem" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/android/static-vertical-attributes-android">Vertical Attributes</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Embedded Placement Integration</h1></header><article><div><span><p>The Rokt SDK for iOS can be used to display a Rokt placement embedded in your app’s content. These instructions assume that the Rokt SDK for iOS has already been integrated into your application by following steps 1 to 4 <a href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-integrating-and-initialising-ios">here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="step-5-modify-storyboard"></a><a href="#step-5-modify-storyboard" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 5: Modify Storyboard</h3>
+<p>In your Storyboard, add a view and put it in your ViewController<br>
+<img src="https://api.media.atlassian.com/file/a8d92ed8-77df-47a1-a1b3-2c3e0568a896/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI3MDhjZDdhNy1kZWNjLTRjN2UtYWZiYy05ODA2Yjg5NWNkMWIiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmE4ZDkyZWQ4LTc3ZGYtNDdhMS1hMWIzLTJjM2UwNTY4YTg5NiI6WyJyZWFkIl19LCJleHAiOjE1OTA3OTY0NDQsIm5iZiI6MTU5MDcxMzQ2NH0.k8xQEAPEmfOuk5Xfu13JaidsLJH4qJM0xhMYqbGgl_M&amp;client=708cd7a7-decc-4c7e-afbc-9806b895cd1b&amp;name=Screen%20Shot%202019-08-02%20at%203.35.32%20pm.png&amp;max-age=2940" alt=""></p>
+<p>On the custom class, set RoktEmbeddedView as the View's Class. Then define top, leading and trailing constraints to match the place that the embedded placement will be shown. For height, it is recommended to create a height constraint of 0 (zero).</p>
+<p>RoktEmbeddedView can only modify the height of itself. It can change the height constraint of itself according to the content of the placement. There is a callback in execute method to notify when the height has changed and return the new height.</p>
+<p>The image below illustrates the easiest way to define RoktEmbeddedView using auto layout.</p>
+<ul>
+<li>Step 1: Place <strong>RoktEmbeddedView</strong> as the <strong>Class</strong> of view and <strong>Rokt_Widget</strong> as <strong>Module</strong></li>
+<li>Steps 2, 3 &amp; 4: Define the top, leading and trailing constraints</li>
+<li>Steps 5 &amp; 6: Define the height constraint</li>
+<li>Step 7: Add constraints to view</li>
+</ul>
+<p><img src="https://api.media.atlassian.com/file/719ac041-8682-4308-a91b-108f79882a30/binary?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI3MDhjZDdhNy1kZWNjLTRjN2UtYWZiYy05ODA2Yjg5NWNkMWIiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOjcxOWFjMDQxLTg2ODItNDMwOC1hOTFiLTEwOGY3OTg4MmEzMCI6WyJyZWFkIl19LCJleHAiOjE1OTA3OTY3MjYsIm5iZiI6MTU5MDcxMzc0Nn0.eXAY36QyQfXkF3ml0_F9Rcx_Cr8ZO9a1S4oMwVUkRFo&amp;client=708cd7a7-decc-4c7e-afbc-9806b895cd1b&amp;name=Screen%20Shot%202019-08-02%20at%203.37.15%20pm.png&amp;max-age=2940" alt=""></p>
+<blockquote>
+<p>The RoktEmbeddedView can also be created in code and included in the layout dynamically.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="step-6-execute-the-rokt-sdk-for-ios"></a><a href="#step-6-execute-the-rokt-sdk-for-ios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 6: Execute the Rokt SDK for iOS</h3>
+<p>Execute the Rokt SDK for iOS in your desired ViewController and pass all appropriate consumer attributes. The example code below uses ViewDidLoad to launch the placement.</p>
+<blockquote>
+<p>The Rokt placement displays after a short delay, configurable via the Rokt platform.<br>
+The SDK provides optional callback events for when the view loads and unloads.<br>
+Your app dictates which consumer attributes are passed through to Rokt. More information on the data fields that are able to be passed through the SDK can be found under the <a href="attributes.md">“Attributes”</a> section. You can add additional code lines into the below sections containing consumer attributes in order to build up the data package that will be sent through to Rokt.</p>
+</blockquote>
+<p><strong>Swift</strong></p>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> Rokt_Widget
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderConfirmationViewController</span>: <span class="hljs-title">UIViewController</span> </span>{
+  
+   <span class="hljs-comment">// linked to RoktEmbeddedView created in step 5 or it could be created programmatically</span>
+    <span class="hljs-meta">@IBOutlet</span> <span class="hljs-keyword">weak</span> <span class="hljs-keyword">var</span> roktEmbeddedView: <span class="hljs-type">RoktEmbeddedView!</span>
+  
+    ...
+ 
+    <span class="hljs-comment">// call this function when placement needs to be shown</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">showWidget</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-keyword">let</span> attributes = [<span class="hljs-string">"email"</span>: <span class="hljs-string">"j.smith@example.com"</span>,
+                <span class="hljs-string">"firstname"</span>: <span class="hljs-string">"Jenny"</span>,
+                <span class="hljs-string">"lastname"</span>: <span class="hljs-string">"Smith"</span>,
+                <span class="hljs-string">"mobile"</span>: <span class="hljs-string">"(555)867-5309"</span>,
+                <span class="hljs-string">"postcode"</span>: <span class="hljs-string">"90210"</span>,
+                <span class="hljs-string">"country"</span>: <span class="hljs-string">"US"</span>]
+  
+       <span class="hljs-keyword">let</span> placements: [<span class="hljs-type">String</span> : <span class="hljs-type">RoktEmbeddedView</span>] = [<span class="hljs-string">"RoktEmbedded1"</span>: roktEmbeddedView]
+  
+        <span class="hljs-type">Rokt</span>.execute(viewName: <span class="hljs-string">"RoktEmbeddedExperience"</span>, attributes: attributes, placements: placements, onLoad: {
+            <span class="hljs-comment">// Optional callback for when the Rokt placement loads  </span>
+        }, onUnLoad: {    
+            <span class="hljs-comment">// Optional callback for when the Rokt placement unloads  </span>
+        }, onShouldShowLoadingIndicator: {
+            <span class="hljs-comment">// Optional callback to show a loading indicator</span>
+        }, onShouldHideLoadingIndicator: {
+            <span class="hljs-comment">// Optional callback to hide a loading indicator</span>
+        }, onEmbeddedSizeChange: { selectedPlacement, widgetHeight <span class="hljs-keyword">in</span>
+            <span class="hljs-comment">// Optional callback to get selectedPlacement and height required by the placement every time the height of the placement changes</span>
+        })
+    }
+}
+</code></pre>
+<p><strong>Objective-C</strong></p>
+<pre><code class="hljs"><span class="hljs-meta">#import <span class="hljs-meta-string">&lt;Rokt_Widget/Rokt_Widget-Swift.h&gt;</span></span>
+   
+...
+<span class="hljs-comment">// call this function when the placement needs to be shown</span>
+- (<span class="hljs-keyword">void</span>)showWidget {
+    <span class="hljs-built_in">NSDictionary</span> *attributes = @{
+        <span class="hljs-string">@"email"</span> : <span class="hljs-string">@"j.smith@example.com"</span>,
+        <span class="hljs-string">@"firstname"</span>: <span class="hljs-string">@"Jenny"</span>,
+        <span class="hljs-string">@"lastname"</span>: <span class="hljs-string">@"Smith"</span>,
+        <span class="hljs-string">@"mobile"</span>: <span class="hljs-string">@"(555)867-5309"</span>,
+        <span class="hljs-string">@"postcode"</span>: <span class="hljs-string">@"90210"</span>,
+        <span class="hljs-string">@"country"</span>: <span class="hljs-string">@"US"</span>
+    };
+     
+    <span class="hljs-comment">// roktEmbeddedView is @property (weak, nonatomic) IBOutlet RoktEmbeddedView *roktEmbeddedView;  in .h which points to roktEmbeddedView defines in step 5 or it could be created programmatically</span>
+    <span class="hljs-built_in">NSDictionary</span>&lt;<span class="hljs-built_in">NSString</span> *, RoktEmbeddedView *&gt; *placements= [<span class="hljs-built_in">NSDictionary</span> dictionaryWithObject:<span class="hljs-keyword">self</span>.roktEmbeddedView forKey:<span class="hljs-string">@"RoktEmbedded1"</span>];
+     
+    [Rokt executeWithViewName:<span class="hljs-string">@"RoktExperience"</span>
+                   attributes:attributes
+                   placements:placements
+                       onLoad:^{
+        <span class="hljs-comment">// Optional callback for when the Rokt placement loads</span>
+    } onUnLoad:^{
+        <span class="hljs-comment">// Optional callback for when the Rokt placement unloads</span>
+    } onShouldShowLoadingIndicator:^{
+        <span class="hljs-comment">// Optional callback to show a loading indicator</span>
+    } onShouldHideLoadingIndicator:^{
+        <span class="hljs-comment">// Optional callback to hide a loading indicator</span>
+    } onEmbeddedSizeChange:^(<span class="hljs-built_in">NSString</span> *selectedPlacement, <span class="hljs-built_in">CGFloat</span> widgetHeight){
+        <span class="hljs-comment">// Optional callback to get selectedPlacement and height required by the placement every time the height of the placement changes</span>
+    }];
+}
+</code></pre>
+<blockquote>
+<p>If you wish to update the view name (RoktExperience) or placement name (RoktEmbedded1) with a different value, please contact your Rokt account manager to ensure Rokt placements are configured consistently.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="step-7-build--run"></a><a href="#step-7-build--run" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 7: Build &amp; Run</h3>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-overlay-placement-ios"><span class="arrow-prev">← </span><span>Overlay Placement Integration</span></a><a class="docs-next button" href="/rokt-sdk-js/docs/static/rokt-sdk-mobile/ios/static-brand-conversion-ios"><span>Brand Conversion Integration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>DOCS</h5><a href="/rokt-sdk-js/docs/static/static-introduction">Getting Started</a><a href="/rokt-sdk-js/docs/rokt-js-sdk/rokt-js-sdk-introduction">Rokt Javascript SDK</a></div><div><h5>ROKT</h5><a href="https://rokt.com/privacy-policy/" target="_blank" rel="noreferrer noopener">Privacy Policy</a><a href="https://rokt.com/contact-us/" target="_blank" rel="noreferrer noopener">Contact Us</a><a href="https://rokt.com/engineering-blog/" target="_blank" rel="noreferrer noopener">Blog</a></div><div><a href="https://rokt.com" class="nav-home"><img src="/rokt-sdk-js/img/rokt-logo-white.svg" alt="Rokt"/></a><div class="social"><a href="https://www.facebook.com/ROKT" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-square"></i></a><a href="https://tweeter.com/rokt" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter-square"></i></a><a href="https://www.linkedin.com/company/rokt" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a></div></div></section><section class="copyright">Copyright © Rokt 2020 - All Rights Reserved</section></footer></div></body></html>
