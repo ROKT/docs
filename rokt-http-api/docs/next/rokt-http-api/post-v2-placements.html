@@ -11,30 +11,23 @@
 <tr><td>Accept-Language</td><td></td><td>header</td><td>Expected locale of the consumer. This can be the full locale including language and country, or a neutral locale which only has the language. When locale is specified only placements and offers that match the locale are included for consideration.</td><td></td><td>example</td></tr>
 </tbody>
 </table>
-<p><a href="types/rokt-widget-app-handlers-get-placements-get-placements-handler-request-v2">Rokt.Widget.App.Handlers.GetPlacements.GetPlacementsHandlerRequestV2</a></p>
+<p><a href="types/rokt-widget-presentation-api-controllers-v2-get-placements-raw-request-v2">Rokt.Widget.Presentation.ApiControllers.V2.GetPlacementsRawRequestV2</a></p>
 <table>
 <thead>
 <tr><th>Key</th><th>Type</th><th>Description</th><th>Example</th></tr>
 </thead>
 <tbody>
+<tr><td>pageId</td><td>string</td><td></td><td>example</td></tr>
+<tr><td>audienceId</td><td>string</td><td></td><td>example</td></tr>
 <tr><td>cartId</td><td>string</td><td></td><td>example</td></tr>
 <tr><td>pageIdentifier</td><td>string</td><td></td><td>example</td></tr>
 <tr><td>url</td><td>string</td><td></td><td>example</td></tr>
+<tr><td>eventIds</td><td>Array of <a href="./types/microsoft-extensions-logging-event-id">Microsoft.Extensions.Logging.EventId</a></td><td></td><td>example</td></tr>
 <tr><td>attributes</td><td>Hash table of string</td><td></td><td>example</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="response"></a><a href="#response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Response</h2>
 <p><strong>200</strong> OK</p>
-<p><a href="types/rokt-widget-app-interfaces-pocos-get-placements-v2-get-placements-api-response-v2">Rokt.Widget.App.Interfaces.Pocos.GetPlacements.V2.GetPlacementsApiResponseV2</a></p>
-<table>
-<thead>
-<tr><th>Key</th><th>Type</th><th>Description</th><th>Example</th></tr>
-</thead>
-<tbody>
-<tr><td>pageContext</td><td></td><td></td><td>example</td></tr>
-<tr><td>placements</td><td>Array of <a href="./types/rokt-widget-app-interfaces-pocos-get-placements-v2-placement-v2">Rokt.Widget.App.Interfaces.Pocos.GetPlacements.V2.PlacementV2</a></td><td></td><td>example</td></tr>
-</tbody>
-</table>
 <p><strong>400</strong> BadRequest</p>
 <p><a href="types/rokt-widget-presentation-api-controllers-common-error-response">Rokt.Widget.Presentation.ApiControllers.Common.ErrorResponse</a></p>
 <table>

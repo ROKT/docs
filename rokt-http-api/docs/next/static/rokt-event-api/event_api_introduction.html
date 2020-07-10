@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Introduction · Rokt</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The Event API is a flexible and robust API that can receive any type of client event (e.g. web purchase, app open, or store visit) along with any associated attributes (e.g. email address, purchase amount, ccbin).  We have two main use cases for this API, which will be described below."/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Introduction · Rokt"/><meta property="og:type" content="website"/><meta property="og:url" content="https://rokt.github.io/rokt-http-api/"/><meta property="og:description" content="The Event API is a flexible and robust API that can receive any type of client event (e.g. web purchase, app open, or store visit) along with any associated attributes (e.g. email address, purchase amount, ccbin).  We have two main use cases for this API, which will be described below."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/rokt-http-api/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/rokt-http-api/fontawesome/brands.min.js"></script><script type="text/javascript" src="/rokt-http-api/fontawesome/fontawesome.min.js"></script><script type="text/javascript" src="/rokt-http-api/hack-header-icon.js"></script><script type="text/javascript" src="/rokt-http-api/hack-contact-us.js"></script><script src="/rokt-http-api/js/scrollSpy.js"></script><link rel="stylesheet" href="/rokt-http-api/css/main.css"/><script src="/rokt-http-api/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/rokt-http-api/"><img class="logo" src="/rokt-http-api/img/rokt-logo-white.svg" alt="Rokt"/></a><a href="/rokt-http-api/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/rokt-http-api/introduction" target="_self">Introduction</a></li><li class=""><a href="/rokt-sdk-js/docs/static/rokt-sdk-js/static-introduction" target="_self">SDK</a></li><li class="siteNavGroupActive"><a href="/rokt-http-api/docs/next/static/rokt-http-api/api-getting-started" target="_self">API</a></li><li class=""><a href="/rokt-http-api/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Event API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/rokt-http-api/docs/next/static/rokt-http-api/api-getting-started">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Add to Cart API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/rokt-http-api/docs/next/static/rokt-http-api/api-introduction">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API Methods</h3><ul class=""><li class="navListItem"><a class="navItem" href="/rokt-http-api/docs/next/rokt-http-api/post-v1-placements-any">POST /v1/Placements/any</a></li><li class="navListItem"><a class="navItem" href="/rokt-http-api/docs/next/rokt-http-api/post-v1-cart-reserve">POST /v1/Cart/reserve</a></li><li class="navListItem"><a class="navItem" href="/rokt-http-api/docs/next/rokt-http-api/post-v1-cart-release">POST /v1/Cart/release</a></li><li class="navListItem"><a class="navItem" href="/rokt-http-api/docs/next/rokt-http-api/post-v1-cart-confirm">POST /v1/Cart/confirm</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Event API</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/rokt-http-api/docs/next/static/rokt-event-api/event_api_introduction">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Event API Methods</h3><ul class=""><li class="navListItem"><a class="navItem" href="/rokt-http-api/docs/next/static/rokt-event-api/authentication_post_oauth_2_token">POST /auth/oauth2/token</a></li><li class="navListItem"><a class="navItem" href="/rokt-http-api/docs/next/static/rokt-event-api/event_api_post_events_v1">POST /events/v1</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Introduction</h1></header><article><div><span><p>The Event API is a flexible and robust API that can receive any type of client event (e.g. web purchase, app open, or store visit) along with any associated attributes (e.g. email address, purchase amount, ccbin).  We have two main use cases for this API, which will be described below.</p>
+<h3><a class="anchor" aria-hidden="true" id="conversion-attribution"></a><a href="#conversion-attribution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conversion Attribution</h3>
+<p>Accurate measurement of marketing outcomes is critical for achieving success at Rokt, and establishing a tight conversion data integration will allow Rokt to more effectively optimize your campaigns, measure performance, and detect anomalies.<br>
+Using the Event API as a standalone integration for Conversion Data provides a few key benefits:</p>
+<ul>
+<li><strong>Coverage</strong>: Permits integration of events across all channels and devices, resulting in coverage for conversions across Website, Application, or In-Store.</li>
+<li><strong>Reliability</strong>: Since the Event API is a Server to Server integration, it is not susceptible to any interference by web technologies such as browser or ad blocking.  It also supports error handling, ensuring that data is never lost.</li>
+<li><strong>Speed</strong>: The Event API allows for fully automated, near-real time data exchange, maximizing the potential of Rokt’s automated optimization tools.</li>
+</ul>
+<p>For best performance, we recommend integrating with the Event API for conversion attribution, either as a standalone integration or in conjunction with the Web SDK.  When both the Event API and Web SDK are used, you get redundancy and greater attribution accuracy through both personal and device-matching capabilities.</p>
+<p>A broader overview of the Conversion Attribution use case can be found in our document library.</p>
+<h3><a class="anchor" aria-hidden="true" id="integration-anomaly-detection"></a><a href="#integration-anomaly-detection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Integration Anomaly Detection</h3>
+<p>Technical integrations, like Rokt’s through the Web SDK, API or other approach, can be impacted by  small changes made either by your own team on your site (e.g. website changes), by 3rd parties (e.g. tag managers), customer installed applications (e.g. Ad blockers) or technical changes to browser (e.g. Chrome, Safari). Rokt’s experience with over 4 billion e-commerce transactions has shown us that there are many things that can go wrong with these types of integrations and the impact to customers and revenue can be significant. We use a range of tools, alerts, and reporting to track these types of issues, however without a close loop mechanism it can take much longer to detect, identify, and fix problems.</p>
+<p>We strongly recommend clients use the Event API to provide a server-to-server version of the truth, which enables rapid detection and correction of discrepancies that are unaffected by things impacting the integration via the browser.</p>
+<p>A broader overview of the anomaly detection use case can be found in our document library.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/rokt-http-api/docs/next/rokt-http-api/post-v1-cart-confirm"><span class="arrow-prev">← </span><span>POST /v1/Cart/confirm</span></a><a class="docs-next button" href="/rokt-http-api/docs/next/static/rokt-event-api/authentication_post_oauth_2_token"><span>POST /auth/oauth2/token</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><h5>DOCS</h5><a href="/rokt-http-api/docs/static/static-introduction">Getting Started</a><a href="/rokt-http-api/docs/rokt-js-sdk/rokt-js-sdk-introduction">Rokt Javascript SDK</a></div><div><h5>ROKT</h5><a href="https://rokt.com/privacy-policy/" target="_blank" rel="noreferrer noopener">Privacy Policy</a><a href="https://rokt.com/contact-us/" target="_blank" rel="noreferrer noopener">Contact Us</a><a href="https://rokt.com/engineering-blog/" target="_blank" rel="noreferrer noopener">Blog</a></div><div><a href="https://rokt.com" class="nav-home"><img src="/rokt-http-api/img/rokt-logo-white.svg" alt="Rokt"/></a><div class="social"><a href="https://www.facebook.com/ROKT" target="_blank" rel="noreferrer noopener"><i class="fab fa-facebook-square"></i></a><a href="https://tweeter.com/rokt" target="_blank" rel="noreferrer noopener"><i class="fab fa-twitter-square"></i></a><a href="https://www.linkedin.com/company/rokt" target="_blank" rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a></div></div></section><section class="copyright">Copyright © Rokt 2020 - All Rights Reserved</section></footer></div></body></html>
