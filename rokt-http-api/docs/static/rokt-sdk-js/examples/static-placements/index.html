@@ -15,6 +15,11 @@
     placement.on(<span class="hljs-string">'PLACEMENT_RESIZE'</span>).subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
       <span class="hljs-comment">// Logic to run after Placement resizes</span>
     });
+
+    <span class="hljs-comment">// Listen for when the placement encounters an unrecoverable failure before closing</span>
+    placement.on(<span class="hljs-string">'PLACEMENT_FAILURE'</span>).subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// Logic to run after Placement has encountered a failure</span>
+    });
   });
 
   <span class="hljs-comment">// Integration steps as per other examples</span>
