@@ -77,19 +77,19 @@
 </table>
 <h3><a class="anchor" aria-hidden="true" id="objectdata-payloads"></a><a href="#objectdata-payloads" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>objectData Payloads</h3>
 <p>The Object Data payload is where you should provide relevant information about the event.  While it is not required to provide any objectData, it is highly recommended to provide information that will improve the effectiveness of Rokt’s attribution or anomaly detection systems.</p>
-<p>Depending on the use case, we recommend you provide different attributes to Rokt.  For Conversion Attribution, we suggest you provide as much user identification information as possible.  Example fields include:</p>
+<p>Depending on the use case, we recommend you provide different attributes to Rokt.  For Conversion Attribution, we require at least one of the following fields to be provided:</p>
 <ul>
 <li>Email Address</li>
 <li>Phone Number</li>
-<li>IP Address</li>
-<li>First Name</li>
-<li>Last Name</li>
 <li>Rokt Conversion Tracking ID (if available)</li>
 </ul>
 <p>All of the above can be provided raw or sha 256 hashed.  Specific hashing instructions will be included in the detailed attribute section of the document.</p>
 <p>Other data that may be useful will be:</p>
 <ul>
-<li>Purchase ID</li>
+<li>IP Address</li>
+<li>First Name</li>
+<li>Last Name</li>
+<li>Transaction ID</li>
 <li>Coupon ID</li>
 <li>Cart ID</li>
 <li>Conversion Type (note: this field is particularly useful if the default “conversion” event type is provided)</li>
@@ -101,7 +101,7 @@
 <li>Device Type, Browser, OS, etc.  (note: providing the User Agent string would be perfect here)</li>
 <li>Platform (eg: web vs in app)</li>
 <li>Event Time</li>
-<li>Purchase ID</li>
+<li>Transaction ID</li>
 <li>Country</li>
 <li>IP Address</li>
 </ul>
@@ -265,7 +265,8 @@
 <tr><td>paymenttype</td><td>Conversion Attribution/Reporting</td><td>The payment method used during the transaction</td><td>VISA;American Express</td></tr>
 <tr><td>ccbin</td><td>Conversion Attribution/Reporting</td><td>credit card BIN of converting payment</td><td>123456</td></tr>
 <tr><td>margin</td><td>Conversion Attribution/Reporting</td><td>Profit margin of conversion</td><td>10</td></tr>
-<tr><td>confirmationref</td><td>All</td><td>Identifier of the pruchase. Also referred to as purchase ID or Transaction ID.</td><td>XYZ123</td></tr>
+<tr><td>transactionid</td><td>All</td><td>Transaction ID, used to identify a unique transaction.  <strong>Note</strong> Rokt will use this identifier to deduplicate conversion events across channels if provided.</td><td>ABC789</td></tr>
+<tr><td>confirmationref</td><td>All</td><td>Confirmation reference ID.  Alternate identifier that may be used to identify a unique transaction and/or track order confirmations.  <strong>Note</strong> Rokt will use this identifier to deduplicate conversion events if provided and transactionid is unavailable.</td><td>XYZ123</td></tr>
 <tr><td>firstname</td><td>All</td><td>Consumer's first name</td><td>John</td></tr>
 <tr><td>firstnamesha256</td><td>All</td><td>Sha256 hash of first name. Prior to hashing lowercase and trim all trailing spaces.</td><td>fab1e2e699b3b927cbf875046a64f2225df02d5cb306f3857424c2bbb87be61f</td></tr>
 <tr><td>lastname</td><td>All</td><td></td><td>Smith</td></tr>
